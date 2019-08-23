@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config')
+const UserSoapsRouter = require('./user-soaps/UserSoapsRouter')
+const UsersRouter = require('./users/users-router')
 
 const app = express();
 
@@ -15,7 +17,10 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.use('/soapify/api/users', UsersRouter)
+app.use('/soapify/api/user', UserSoapsRouter)
+
+app.get('/soapify/api/', (req, res) => {
     res.send('Hello, world!')
 })
 
