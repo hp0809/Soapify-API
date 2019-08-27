@@ -10,3 +10,6 @@
 {"message":"Soap with id 18 deleted.","level":"info"}
 {"message":"Soap with id 16 deleted.","level":"info"}
 {"message":"Soap with id 17 deleted.","level":"info"}
+{"message":"Soap with id 24 created.","level":"info"}
+{"message":"Soap with id 24 deleted.","level":"info"}
+{"message":"name is required","level":"error"}

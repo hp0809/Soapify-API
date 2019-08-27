@@ -3,6 +3,7 @@ const express = require('express');
 const xss = require('xss');
 const logger = require('../logger');
 const UserSoapsService = require('./user-soaps-service');
+const {requireAuth} = require('../middleware/jwt-auth')
 
 const UserSoapsRouter = express.Router();
 const bodyParser = express.json()
@@ -24,8 +25,8 @@ UserSoapsRouter
         })
     .catch(next)
     })
-
-    .post(bodyParser, (req, res, next) => {
+    
+    .post(requireAuth, bodyParser, (req, res, next) => {
         const {name, text} = req.body
         const user_id = req.params.userId
         const newUserSoap = {name, text, user_id}

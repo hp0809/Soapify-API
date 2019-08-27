@@ -21,11 +21,11 @@ VALUES
 
 INSERT INTO soapify_users (user_name, password, nickname, email)
 VALUES
-    ('user123', 'e692fda6-9b67-4cba-9818-59b52ec7c744', '', 'user123@gmail.com'),
-    ('user124', 'e692fda6-9b67-4cba-9818-59b52ec7c744', '', 'user124@gmail.com'),
-    ('user125', 'e692fda6-9b67-4cba-9818-59b52ec7c744', '', 'user125@gmail.com'),
-    ('user126', 'e692fda6-9b67-4cba-9818-59b52ec7c744', '', 'user126@gmail.com'),
-    ('user127', 'e692fda6-9b67-4cba-9818-59b52ec7c744', '', 'user127@gmail.com');
+    ('user123', 'Password1', 'hello', 'user123@gmail.com'),
+    ('user124', 'Password1', 'Slim Shady', 'user124@gmail.com'),
+    ('user125', 'Password1', 'Hali', 'user125@gmail.com'),
+    ('user126', 'Password1', 'Kazu', 'user126@gmail.com'),
+    ('user127', 'Password1', 'Ro J', 'user127@gmail.com');
 
 INSERT INTO user_soaps (name, text, user_id)
 VALUES

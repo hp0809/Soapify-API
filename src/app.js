@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const { NODE_ENV } = require('./config')
 const UserSoapsRouter = require('./user-soaps/UserSoapsRouter')
 const UsersRouter = require('./users/users-router')
+const authRouter = require('./auth/auth-router')
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cors());
 
 app.use('/soapify/api/users', UsersRouter)
 app.use('/soapify/api/user', UserSoapsRouter)
+app.use('/soapify/api/auth', authRouter)
 
 app.get('/soapify/api/', (req, res) => {
     res.send('Hello, world!')
