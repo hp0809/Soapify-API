@@ -34,16 +34,10 @@ authRouter
 
           return AuthService.comparePasswords(loginUser.password, dbUser.password)
           .then(compareMatch => {
-            /*console.log(dbUser.password)
-            console.log(loginUser.password)
-            console.log(typeof dbUser.password)
-            console.log(typeof loginUser.password);
-            console.log(loginUser.password === dbUser.password)
-            */
 
             console.log(compareMatch)
 
-            if (!compareMatch) {
+            if (compareMatch) {
               return res.status(400).json({
                 error: 'Incorrect user_name or password',
               })
