@@ -16,7 +16,7 @@ const serializeUserSoaps = soaps => ({
 
 UserSoapsRouter
     .route('/:userId')
-    
+    .all(requireAuth)
     .get((req, res, next) => {
     const knexInstance = req.app.get('db')
     UserSoapsService.listUsersSoaps(knexInstance, req.params.userId)
@@ -56,7 +56,7 @@ UserSoapsRouter
 
 UserSoapsRouter
     .route('/:userId/customSoap/:userSoapsId')
-    
+    .all(requireAuth)
 
     .get((req, res, next) => {
     const knexInstance = req.app.get('db')
