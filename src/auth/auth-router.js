@@ -37,7 +37,7 @@ authRouter
 
             console.log(compareMatch)
 
-            if (compareMatch) {
+            if (!compareMatch) {
               return res.status(400).json({
                 error: 'Incorrect user_name or password',
               })
