@@ -6,6 +6,7 @@ const usersRouter = express.Router()
 const jsonBodyParser = express.json()
 
 usersRouter
+
     .post('/', jsonBodyParser, (req, res, next) => {
       const { password, user_name, email, nickname } = req.body
 
@@ -52,5 +53,14 @@ usersRouter
         })
         .catch(next)
   })
+
+.get('/', (req, res, next) => {
+  const knexInstance = req.app.get('db')
+  UsersService.listUsers(knexInstance)
+    .then(users => {
+      res.json(users)                
+  })
+  .catch(next)
+})
 
 module.exports = usersRouter
