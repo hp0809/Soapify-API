@@ -1,6 +1,7 @@
 const express = require('express')
 const AuthService = require('./auth-service')
 const { requireAuth } = require('../middleware/jwt-auth')
+const OilsService = require('../oils/oils-service')
 
 const authRouter = express.Router()
 const jsonBodyParser = express.json()
@@ -47,7 +48,8 @@ authRouter
                 date_created: dbUser.date_created,
                 nickname: dbUser.nickname,
                 user_name: dbUser.user_name
-              },             
+              }, 
+                
               
               })                            
             })

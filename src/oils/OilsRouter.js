@@ -8,7 +8,7 @@ const OilsRouter = express.Router();
 
 OilsRouter
     .route('/')
-    .get(jsonBodyParser, (req, res, next) => {
+    .get((req, res, next) => {
         const knexInstance = req.app.get('db')
         OilsService.listOils(knexInstance)
             .then(oils => {
