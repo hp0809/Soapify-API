@@ -1,5 +1,4 @@
 TRUNCATE
     soapify_oils,
-    soapify_users,
-    user_soaps
+    soapify_users
     RESTART IDENTITY CASCADE;

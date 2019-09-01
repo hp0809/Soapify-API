@@ -2,8 +2,7 @@ BEGIN;
 
 TRUNCATE
     soapify_oils,
-    soapify_users,
-    user_soaps
+    soapify_users
     RESTART IDENTITY CASCADE;
 
 INSERT INTO soapify_oils (oil_name, sap_value)
@@ -26,19 +25,5 @@ VALUES
     ('user125', 'Password1', 'Hali', 'user125@gmail.com'),
     ('user126', 'Password1', 'Kazu', 'user126@gmail.com'),
     ('user127', 'Password1', 'Ro J', 'user127@gmail.com');
-
-INSERT INTO user_soaps (name, text, user_id)
-VALUES
-    ('soap 1', 'this is soap number 1', 1),
-    ('soap 2', 'this is soap number 2', 1),
-    ('soap 3', 'this is soap number 3', 2),
-    ('soap 4', 'this is soap number 4', 2),
-    ('soap 5', 'this is soap number 5', 2),
-    ('soap 6', 'this is soap number 6', 3),
-    ('soap 7', 'this is soap number 7', 4),
-    ('soap 8', 'this is soap number 8', 4),
-    ('soap 9', 'this is soap number 9', 5),
-    ('soap 10', 'this is soap number 10', 5),
-    ('soap 11', 'this is soap number 11', 5);
 
 COMMIT;
