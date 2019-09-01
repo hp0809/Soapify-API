@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+console.log(process.env.MIGRATION_DB_HOST)
+
 module.exports = {
   "migrationDirectory": "migrations",
   "driver": "pg",
@@ -9,3 +11,4 @@ module.exports = {
   "username": process.env.MIGRATION_DB_USER,
   "password": process.env.MIGRATION_DB_PASS
 }
+
