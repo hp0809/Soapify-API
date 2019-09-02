@@ -1,7 +1,6 @@
 const express = require('express')
 const AuthService = require('./auth-service')
 const { requireAuth } = require('../middleware/jwt-auth')
-const OilsService = require('../oils/oils-service')
 
 const authRouter = express.Router()
 const jsonBodyParser = express.json()
@@ -10,6 +9,7 @@ authRouter
   .post('/login', jsonBodyParser, (req, res, next) => {
     const { user_name, password } = req.body
     const loginUser = { user_name, password }
+    console.log(loginUser)
 
     for (const [key, value] of Object.entries(loginUser))
       if (value == null)
@@ -31,7 +31,7 @@ authRouter
 
           return AuthService.comparePasswords(loginUser.password, dbUser.password)
           .then(compareMatch => {
-
+            
             if (!compareMatch) {
               return res.status(400).json({
                 error: 'Incorrect user_name or password',
@@ -48,9 +48,7 @@ authRouter
                 date_created: dbUser.date_created,
                 nickname: dbUser.nickname,
                 user_name: dbUser.user_name
-              }, 
-                
-              
+              },               
               })                            
             })
           })
