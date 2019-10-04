@@ -7,8 +7,7 @@ An API made for the Soapify App.
 ```GET``` | ```POST``` 
 
 - Endpoints
-
-/soapify/api/oils
-/soapify/api/users
-/soapify/api/auth/
+  * /soapify/api/oils
+  * /soapify/api/users
+  * /soapify/api/auth/
 
